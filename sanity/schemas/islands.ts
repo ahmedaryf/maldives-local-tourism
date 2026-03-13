@@ -18,11 +18,24 @@ export const islands = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: { source: (doc) => `${doc.islandName} ${doc.atoll}` },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: "coverPhoto",
       title: "Cover Photo",
       type: "image",
       options: { hotspot: true },
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "islandInfo",
+      title: "Island Info",
+      type: "array",
+      of: [{ type: "block" }],
     }),
   ],
 });

@@ -17,7 +17,7 @@ export default async function Home() {
   const islands = await getIslands();
 
   return (
-    <div className='min-h-screen w-full lg:w-[80vw] mx-auto '>
+    <div className='min-h-screen w-full lg:w-[80vw] mx-auto px-2'>
       <h1 className='text-2xl lg:text-5xl text-center mt-12 body-font text-zinc-500'>
         Maldives Local Tourism
       </h1>
