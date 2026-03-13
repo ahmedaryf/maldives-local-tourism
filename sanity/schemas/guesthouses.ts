@@ -63,6 +63,35 @@ export const guesthouses = defineType({
               },
               validation: (Rule) => Rule.required(),
             }),
+            defineField({
+              name: "roomCoverPhoto",
+              title: "Room Cover Photo",
+              type: "image",
+              options: { hotspot: true },
+            }),
+            defineField({
+              name: "mostPopularFacilities",
+              title: "Most Popular Facilities",
+              type: "array",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    defineField({
+                      name: "popularFacilityName",
+                      title: "Facility Name",
+                      type: "string",
+                      validation: (Rule) => Rule.required(),
+                    }),
+                    defineField({
+                      name: "facilityIcon",
+                      title: "Facility Icon",
+                      type: "image",
+                    }),
+                  ],
+                },
+              ],
+            }),
           ],
         },
       ],
