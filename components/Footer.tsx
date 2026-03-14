@@ -26,7 +26,7 @@ export default async function Footer() {
   const links = await getFormLinks();
 
   return (
-    <footer className='min-h-[60vh] w-screen  duration-500 border border-t-zinc-300 dark:border-t border-white  flex flex-col justify-between py-6 '>
+    <footer className='min-h-[60vh] w-screen  duration-500  border-t-zinc-300 dark:border-t border-white  flex flex-col justify-between py-6 '>
       <div className=' md:flex justify-between items-start px-10 w-full xl:w-[80vw] mx-auto mt-12'>
         {/* <div className='flex md:hidden gap-6 justify-center items-center'>
           <Link href={"https://www.facebook.com/KeyodhooSchool"}>
