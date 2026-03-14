@@ -97,7 +97,7 @@ export default async function Footer() {
           <h5 className='text-sm'>© {year} Maldives Local Tourism</h5>
         </div>
 
-        <h5 className='text-xs text-white/20 dark:text-gray-600 mt-2'>
+        <h5 className='text-xs text-zinc-300 dark:text-gray-600 mt-2'>
           Developed by Ahmed Areef
         </h5>
       </div>

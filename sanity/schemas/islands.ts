@@ -37,5 +37,18 @@ export const islands = defineType({
       type: "array",
       of: [{ type: "block" }],
     }),
+    defineField({
+      name: "guesthouses",
+      title: "Guesthouses",
+      type: "array",
+      of: [
+        defineField({
+          name: "guesthouse",
+          title: "Guesthouse",
+          type: "reference",
+          to: { type: "guesthouses" },
+        }),
+      ],
+    }),
   ],
 });
