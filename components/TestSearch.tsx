@@ -1,9 +1,24 @@
 "use client";
 import { urlFor } from "@/sanity/lib/image";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import Image from "next/image";
 import React, { useState } from "react";
+import { Slug } from "sanity";
 
-export default function TestSearch({ data }) {
+type Data = {
+  data: Atoll[];
+};
+type Atoll = {
+  atollName: string;
+  islands: Islands[];
+};
+type Islands = {
+  islandName: string;
+  coverPhoto: SanityImageSource;
+  slug: Slug;
+};
+
+export default function TestSearch({ data }: Data) {
   const [query, setQuery] = useState("");
 
   const islands = data.flatMap((atoll) => {
