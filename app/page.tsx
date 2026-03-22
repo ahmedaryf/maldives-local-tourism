@@ -1,19 +1,10 @@
 import AtollsComponent from "@/components/AtollsComponent";
 import Motion from "@/components/Motion";
+import SearchIslands from "@/components/SearchIslands";
 
 import { client } from "@/sanity/lib/client";
 
 import React from "react";
-
-// async function getIslands() {
-//   const query = `*[_type == "islands"]{
-//     islandName,
-//     atoll,
-//     coverPhoto
-//   }`;
-//   const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
-//   return data;
-// }
 
 async function getAtolls() {
   const query = `*[_type == "atolls"]{
@@ -52,8 +43,8 @@ export default async function Home() {
           </h5>
         </Motion>
       </div>
-      <div className='mt-12 '>
-        {/* <IslandsComponent islandsData={islands} /> */}
+      <div className='mt-12 lg:mt-24'>
+        <SearchIslands atolls={atolls} />
       </div>
       <div className='px-2 lg:px-0'>
         <AtollsComponent atollsData={atolls} />
