@@ -50,5 +50,36 @@ export const islands = defineType({
         }),
       ],
     }),
+    defineField({
+      name: "faq",
+      title: "FAQ",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "id",
+              title: "ID",
+              type: "number",
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "question",
+              title: "Question",
+              type: "string",
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "answer",
+              title: "Answer",
+              type: "array",
+              of: [{ type: "block" }],
+              validation: (Rule) => Rule.required(),
+            }),
+          ],
+        },
+      ],
+    }),
   ],
 });

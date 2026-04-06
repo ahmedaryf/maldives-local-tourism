@@ -1,3 +1,4 @@
+import Accordions from "@/components/Accordions";
 import AtollsComponent from "@/components/AtollsComponent";
 import Motion from "@/components/Motion";
 import SearchIslands from "@/components/SearchIslands";
@@ -5,6 +6,13 @@ import SearchIslands from "@/components/SearchIslands";
 import { client } from "@/sanity/lib/client";
 
 import React from "react";
+import { PortableTextBlock } from "sanity";
+
+type FAQData = {
+  id: number;
+  question: string;
+  answer: PortableTextBlock[];
+};
 
 async function getAtolls() {
   const query = `*[_type == "atolls"]{
@@ -19,8 +27,19 @@ async function getAtolls() {
   return data;
 }
 
+async function accordionsData(): Promise<FAQData[]> {
+  const query = `*[_type == "accordions"] | order(id asc){
+    id,
+    question,
+    answer
+  }`;
+  const accordionData = await client.fetch<FAQData[]>(query);
+  return accordionData;
+}
+
 export default async function Home() {
   const atolls = await getAtolls();
+  const accordionData = await accordionsData();
 
   return (
     <div className='min-h-screen w-full lg:w-[80vw] mx-auto px-2'>
@@ -48,6 +67,9 @@ export default async function Home() {
       </div>
       <div className='px-2 lg:px-0'>
         <AtollsComponent atollsData={atolls} />
+      </div>
+      <div className='px-2 md:px-4 mt-12 lg:mt-24'>
+        <Accordions data={accordionData} />
       </div>
     </div>
   );

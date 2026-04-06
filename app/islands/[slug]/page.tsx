@@ -1,3 +1,4 @@
+import Accordions from "@/components/Accordions";
 import BackButton from "@/components/GoBack";
 import Motion from "@/components/Motion";
 import { client } from "@/sanity/lib/client";
@@ -17,7 +18,8 @@ async function getIslands(slug: string) {
         guesthouses[] -> {
             guesthouseName,
             coverPhoto
-        }
+        },
+        faq[]
     } `;
   const data = await client.fetch(
     query,
@@ -39,7 +41,6 @@ export default async function page({
 }) {
   const { slug } = await params;
   const islands = await getIslands(slug);
-  //   console.log(islands);
 
   return (
     <div className='min-h-screen w-full lg:w-[80vw] mx-auto px-4 lg:px-0'>
@@ -85,6 +86,11 @@ export default async function page({
             },
           )}
       </div>
+      {islands.faq && (
+        <div className='mt-12 lg:mt-24'>
+          <Accordions data={islands.faq} />
+        </div>
+      )}
     </div>
   );
 }

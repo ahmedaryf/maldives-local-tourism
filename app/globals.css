@@ -3,6 +3,14 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+.custom-prose {
+  max-width: none;
+}
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
+
 @font-face {
   font-family: PT_Serif;
   src: url("/fonts/PT_Serif/PTSerif-Regular.ttf") format("truetype");
