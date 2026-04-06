@@ -20,7 +20,7 @@ export default function Accordions({ data }: { data: FAQData[] }) {
   return (
     <div className='pb-4 pt-4 md:pt-6 '>
       <div className='mx-auto'>
-        <h5 className='text-zinc-400 text-xl lg:text-2xl uppercase body-font font-semibold text-center'>
+        <h5 className='text-zinc-400 text-base lg:text-xl uppercase body-font text-center'>
           Frequently Asked Question
         </h5>
         {data &&
@@ -28,11 +28,11 @@ export default function Accordions({ data }: { data: FAQData[] }) {
             <div key={index} className=''>
               <button
                 onClick={() => toggleAccordion(item.id)}
-                className='text-sm lg:text-base text-justify md:text-center mt-6  body-font  text-zinc-400 cursor-pointer '>
+                className='text-sm lg:text-base text-justify mt-4 bg-zinc-100 py-2 px-2 md:px-4 rounded-md body-font  text-zinc-400 cursor-pointer w-full'>
                 {item.question}
               </button>
               <Collapse isOpened={openAccordion === item.id}>
-                <div className='text-zinc-500 text-sm md:text-base prose dark:prose-invert custom-prose  body-font py-4 md:px-4 rounded-b-md'>
+                <div className='text-zinc-400 text-sm md:text-base prose dark:prose-invert custom-prose  body-font py-4 px-2 md:px-4 rounded-b-md  bg-zinc-50'>
                   <PortableText value={item.answer} />
                 </div>
               </Collapse>
