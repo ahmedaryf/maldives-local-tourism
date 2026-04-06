@@ -1,9 +1,9 @@
 import { client } from "@/sanity/lib/client";
-import { MailIcon } from "lucide-react";
+// import { MailIcon } from "lucide-react";
 import Link from "next/link";
-import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
+// import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 
-import { FaPhone } from "react-icons/fa6";
+// import { FaPhone } from "react-icons/fa6";
 import { ThemeToggler } from "./ThemeToggler";
 // import { IoIosMail } from "react-icons/io";
 
