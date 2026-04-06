@@ -25,14 +25,14 @@ export default function Accordions({ data }: { data: FAQData[] }) {
         </h5>
         {data &&
           data.map((item: FAQData, index: number) => (
-            <div key={index} className='pb-2 pt-1'>
+            <div key={index} className=''>
               <button
                 onClick={() => toggleAccordion(item.id)}
-                className='text-sm lg:text-xl text-justify md:text-center mt-6  body-font  text-zinc-400 cursor-pointer '>
+                className='text-sm lg:text-base text-justify md:text-center mt-6  body-font  text-zinc-400 cursor-pointer '>
                 {item.question}
               </button>
               <Collapse isOpened={openAccordion === item.id}>
-                <div className='text-zinc-400 text-sm md:text-base prose dark:prose-invert custom-prose  body-font py-4 rounded-b-md'>
+                <div className='text-zinc-500 text-sm md:text-base prose dark:prose-invert custom-prose  body-font py-4 md:px-4 rounded-b-md'>
                   <PortableText value={item.answer} />
                 </div>
               </Collapse>
