@@ -94,7 +94,12 @@ export default async function Footer() {
       <div className='text-center self-center'>
         <div className=''>
           <ThemeToggler />
-          <h5 className='text-sm'>© {year} Maldives Local Tourism</h5>
+          <h5 className='text-xs md:text-sm mt-3 text-zinc-500 body-font'>
+            {year} Maldives Local Tourism
+          </h5>
+          <p className='text-xs md:text-sm text-zinc-500 body-font'>
+            Together we showcase the Maldives — open and free for all
+          </p>
         </div>
 
         <h5 className='text-xs text-zinc-300 dark:text-gray-600 mt-2'>
