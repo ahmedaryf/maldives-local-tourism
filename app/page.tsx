@@ -13,13 +13,13 @@ import React from "react";
 // };
 
 async function getAtolls() {
-  const query = `*[_type == "atolls"]{
+  const query = `*[_type == "atolls"] | order(atollName asc){
     atollName,
     islands[] -> {
       islandName,
       coverPhoto,
       slug
-    }
+    } | order(islandName asc)
   }`;
   const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
   return data;
